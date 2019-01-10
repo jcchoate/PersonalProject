@@ -1,0 +1,146 @@
+.home-body{
+    background: #222;
+    position: absolute;
+    top: 48px;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+.offer-content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 87.5%;
+}
+.offer-box{
+    padding-top: 51px;
+    padding-bottom: 59.5px;
+    width: 100%;
+    background: black;
+    text-align: center;
+    border-bottom-width: 6px;
+    border-color: #222;
+    
+}
+h3{
+    margin: auto;
+    max-width: 13em;
+    font-size: 17px;
+    line-height: 1.47;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.offerh2{
+    margin: 0;
+    font-weight: 600
+}
+.last{
+    margin-bottom: 4.8px
+}
+.smallCaps{
+    font-variant-caps: all-small-caps
+}
+.home-links{
+    margin: 0;
+    color: #6bf;
+}
+.offerLink{
+    margin-top: 11.05px
+}
+.limited{
+    color: #bbb;
+    margin: 0;
+    margin-bottom: 15px;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    line-height: 1.33341;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    white-space: nowrap;
+    border-radius: 4px;
+    display: inline-block
+}
+.iphonebox{
+    background: black;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 37px;
+    margin-top: 10px;
+    padding-left: 10%;
+    padding-right: 5%;
+    overflow: hidden;
+    height: 500px;
+}
+.imageWrapper{
+    margin: 0
+}
+.uphonepic{
+    height: 30px;
+}
+.uphone-info{
+    font-size: 17px;
+    color: white;
+    margin: 0;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.infowrap{
+    width: 90%;
+}
+.xrpic{
+    width: 216px;
+    background-repeat: no-repeat;
+    margin-top: 2em;
+    right: auto;
+    background-image: url(/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_small.jpg);
+}
+.xrwrap{
+    width: 100%;
+}
+.shipping-box{
+    background: black;
+    border-width: 0;
+    border-top-width: 12px;
+    border-style: solid;
+    border-color: #222;
+    border-bottom-width: 12px;
+    border-bottom-color: white
+
+    
+}
+.shipping-text{
+    color: white;
+    font-size: 14px;
+    line-height: 1.42861;
+    font-weight: 400;
+    letter-spacing: -.016em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin: 0;
+    border-color: #222
+}
+.shipping-text-wrap{
+    text-align: center;
+    padding: 37px 0 38px;
+    
+}
+.stupid{
+    width: 100%;
+    
+}
+.specialbox{
+    width: 100%;
+    height: 500px;
+}
+.holiday{
+    height: 100%;
+    width: 100%;
+    object-fit: contain
+}
