@@ -1,5 +1,5 @@
-.PacbookMain{
-    background-color: #121217;
+.UphoneMain{
+    background-color: black;
     padding-left: 22px;
     padding-right: 22px;
     height: 100vh;
@@ -72,29 +72,39 @@ h2{
     color: #63636e;
     font-size: 25px;
 }
-.pacbook-image{
-    background-image: url(https://www.apple.com/v/macbook-pro/t/images/overview/hero/hero_fallback_medium_2x.jpg);
-    width: 1068px;
-    height: 375px;
-    background-size: 1068px 375px;
+.uphone-image{
+    background-image: url(https://www.apple.com/v/iphone-xs/d/images/overview/hero_top_device_large.jpg);
+    width: 1424px;
+    height: 529px;
+    background-size: 1424px 529px;
     background-repeat: no-repeat;
     margin-top: 70px;
     
 }
-@media (min-width: 1080px){
-    .pacbook-image{
-        background-image: url(https://www.apple.com/v/macbook-pro/t/images/overview/hero/hero_fallback_medium_2x.jpg);
-        width: 1424px;
-        height: 529px;
-        background-size: 1424px 529px;
+@media (max-width: 1080px){
+    .uphone-image{
+        width: 1068px;
+        height: 375px;
+        background-image: url(https://www.apple.com/v/iphone-xs/d/images/overview/hero_top_device_large.jpg);
         background-repeat: no-repeat;
+        background-size: 1068px 375px;
         
     }
-    .name{
-        color: #63636e;
-        font-size: 35px;
+}
+
+@media (max-width: 1000px){
+    .uphone-image{
+        width: 800px;
+        height: 300px;
+        background-size: 800px 300px;
+        background-repeat: no-repeat
     }
-    h2{
-        font-size: 45px;
+}
+@media (max-width: 600px){
+    .uphone-image{
+        width: 500px;
+        height: 200px;
+        background-size: 500px 200px;
+        background-repeat: no-repeat
     }
 }

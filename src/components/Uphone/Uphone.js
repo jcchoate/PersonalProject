@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './Uphone.css'
 
 class Uphone extends Component {
     constructor() {
@@ -25,9 +26,27 @@ class Uphone extends Component {
     }
     render() {
         return (
-            <div className="upad">
-                <h1>UPHONE</h1>
-                <button className="addToCart" onClick={()=>this.addItemFn()}>Add to bag</button>
+            <div className="UphoneMain">
+                <div className="header">
+                    <h2>uPhone XS</h2>
+                    <div className="options">
+                        <p>Overview</p>
+                        <p>iOS</p>
+                        <p>Tech Specs</p>
+                        <button className="addToCart" onClick={() => this.addItemFn()}>Buy</button>
+                    </div>
+
+                </div>
+                <div className="line"></div>
+                <div className="effects">
+                    <h1 className="name">uPhone XS</h1>
+                    <h2>Light.</h2>
+                    <h2>Smart.</h2>
+                    <h2>Full of life.</h2>
+                    <div classname="pacbook-wrapper">
+                        <div className="uphone-image"></div>
+                    </div>
+                </div>
             </div>
         );
     }

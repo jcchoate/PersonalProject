@@ -25,11 +25,36 @@ module.exports = {
             imageAddress: imageAddress,
             price: price,
             id: uniqueId,
+            quantity: 1
         }
         uniqueId++
         req.session.cart.push(newItem)
         res.status(200).send(req.session.cart)
         console.log('Completed')
+    },
+    add: (req,res)=>{
+        const {
+            cart
+        } = req.session
+        const {
+            id
+        } = req.params
+        const itemId = cart.findIndex((item) => id == item.id)
+        cart[itemId].quantity +=1
+        console.log("Quntity",cart[itemId].quantity)
+        res.status(200).send(cart)
+    },
+    sub: (req,res)=>{
+        const {
+            cart
+        } = req.session
+        const {
+            id
+        } = req.params
+        const itemId = cart.findIndex((item) => id == item.id)
+        cart[itemId].quantity -=1
+        console.log("Quntity",cart[itemId].quantity)
+        res.status(200).send(cart)
     },
     
     edit: (req, res) => {

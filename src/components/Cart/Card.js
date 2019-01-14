@@ -7,12 +7,7 @@ class Card extends Component {
         super()
 
         this.state = {
-            box: [],
-            items: [],
-            name: '',
-            price: '',
-            imageAddress: '',
-            changer: true
+            changer: true,
         }
         this.reset = this.reset.bind(this)
         this.editBtn = this.editBtn.bind(this)
@@ -28,6 +23,7 @@ class Card extends Component {
             changer: true
         })
     }
+
     
     render() {
 
@@ -43,20 +39,14 @@ class Card extends Component {
                     <img alt="cart item" className="picture" src={image} />
                 </div>
                 <div onClick={this.reset} className="cart-column">
-                    {this.state.changer ?
+                    
                         <h2 className="product-name">
                             {name ? name : null}
-                        </h2> :
-                        <div>
-                        <input onChange={
-                            e => this.setState({
-                                name: e.target.value
-                            })} placeholder="New Name"></input>
-                            <button onClick={this.editBtn}></button>
-                            </div>
-                    }
+                        </h2> 
                     <label className="quantity">
-                        <span aria-hidden="true">Qty: 1</span>
+                        <span aria-hidden="true">Qty: {this.props.quantity}</span>
+                        <button className="math" onClick={()=>this.props.add(id)}>+</button>
+                        <button className="math" onClick={()=>this.props.sub(id)}>-</button>
                     </label>
                     <div className="pricedetails">
                         <p className="price">{price ? price : null}</p>

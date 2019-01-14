@@ -12,7 +12,8 @@ class Items extends Component {
             imageAddress: '',
         }
         this.deleteItem = this.deleteItem.bind(this)
-        this.editItemFn = this.editItemFn.bind(this)
+        this.add = this.add.bind(this)
+        this.sub = this.sub.bind(this)
 
     }
 
@@ -22,12 +23,23 @@ class Items extends Component {
             console.log(res.data)
             this.setState({
                 items: res.data,
-                // name: res.data.item,
-                // price: res.data.priceTotal,
-                // imageAddress: res.data.imageAddress
             })
         }
         )
+    }
+    add(id) {
+        axios.put(`/items/add/${id}`).then(response => {
+            this.setState({
+                items: response.data
+            })
+        })
+    }
+    sub(id) {
+        axios.put(`/items/sub/${id}`).then(response => {
+            this.setState({
+                items: response.data
+            })
+        })
     }
     editItemFn(id, name) {
         let editedItem = {
@@ -61,10 +73,13 @@ class Items extends Component {
                 return (<Card
                     deleteItem={this.deleteItem}
                     editItemFn={this.editItemFn}
+                    add={this.add}
+                    sub={this.sub}
                     image={item.imageAddress}
                     name={item.name}
                     price={item.price}
                     id={item.id}
+                    quantity={item.quantity}
 
                 />)
             })

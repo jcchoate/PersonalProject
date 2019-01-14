@@ -36,7 +36,8 @@ p {
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
     color: #111;
     text-align: left;
-    width: 100px
+    width: 100px;
+    display: flex;
     
 }
 .price{
@@ -106,6 +107,21 @@ p {
     justify-content: space-between;
     padding: 5%;
     
+}
+.math{
+    font-size: 17px;
+    font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    background-color: #0070c9;
+    background: linear-gradient(#42a1ec,#0070c9);
+    border-color: #07c;
+    border-style: solid;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    border: 1px;
+    min-width: 30px;
+    max-height: 30px;
+    margin-right: 10px;
 }
 @media (min-width: 737px){
     .picture{

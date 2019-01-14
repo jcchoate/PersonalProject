@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './Updad.css'
+import upadimg from "./../../UPAD.png"
 
 class Upad extends Component {
     constructor() {
@@ -26,9 +27,27 @@ class Upad extends Component {
     }
     render() {
         return (
-            <div className="upad">
-                <h1>UPAD</h1>
-                <button className="addToCart" onClick={()=>this.addItemFn()}>Add to bag</button>
+            <div className="UphoneMain">
+                <div className="header">
+                    <h2>uPad</h2>
+                    <div className="options">
+                        <p>Overview</p>
+                        <p>iOS</p>
+                        <p>Tech Specs</p>
+                        <button className="addToCart" onClick={() => this.addItemFn()}>Buy</button>
+                    </div>
+
+                </div>
+                <div className="line"></div>
+                <div className="effects">
+                    <h1 className="name">uPad</h1>
+                    <h2>Big space.</h2>
+                    <h2>Small weight.</h2>
+                    <h2>For your biggest projects.</h2>
+                    <div classname="pad-wrapper">
+                        <img src={upadimg} className="upad-image"></img>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -72,6 +72,8 @@ app.listen(SERVER_PORT, () => {
 
 app.get('/items', controller.getItems)
 app.get('/items/:id', controller.getOneItem)
+// app.get('/orders', controller.getOrders)
 app.post('/items', controller.create)
-app.put('/items/:id', controller.edit)
+app.put('/items/add/:id', controller.add)
+app.put('/items/sub/:id', controller.sub)
 app.delete('/items/:id', controller.delete)
