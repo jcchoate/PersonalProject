@@ -13,8 +13,10 @@ class Home extends Component {
                         <div className="offer-content">
                             <div><p className="limited">Limited Time</p></div>
                             <div className="offer-wrapper">
+                            <div className="titles">
                                 <h2 className="offerh2">uPhone X<span className="smallCaps">R</span> from $449.</h2>
-                                <h2 className="offerh2 last">uPhone X<span className="smallCaps">S</span> from $699.</h2>
+                                <h2 className="offerh2 last">{" "}  uPhone X<span className="smallCaps">S</span> from $699.</h2>
+                            </div>
                                 <h3>Trade in your current uPhone and upgrade to a new one.</h3>
                                 <div className="offerLink">
                                     <Link className="home-links" to="/uPhone">Buy now ></Link>
@@ -33,9 +35,12 @@ class Home extends Component {
                             </p>
                             <div className="justlinks">
                                 <Link className="home-links" to='/uPhoneXR/info'>Learn more ></Link>
+                                <Link className="home-links" to='/uPhoneXR/buy'>Buy ></Link>
                             </div>
                             <div className="xrwrap">
-                                <div className="xrpic"></div>
+                                <div className="xrpic">
+                                    {/* <img classname="xrimage" alt="xrpic" src="https://www.apple.com/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_small_2x.jpg"/> */}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -50,10 +55,13 @@ class Home extends Component {
                                 Breakthrough dual cameras with depth control.
                             </p>
                             <div className="justlinks">
-                                <Link className="home-links" to='/uPhoneXR/info'>Learn more ></Link>
+                                <Link className="home-links" to='/uPhoneXS/info'>Learn more ></Link>
+                                <Link className="home-links" to='/uPhoneXS/buy'>Buy ></Link>
                             </div>
                             <div className="xrwrap">
-                                <img className="xrpic" src="https://www.apple.com/v/home/dz/images/heroes/iphone-xs/iphone_xs_0afef_small_2x.jpg" />
+                                <div className="xrpic2">
+                                
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -67,6 +75,12 @@ class Home extends Component {
                     <div>
                         <div className="offerbox specialbox">
                             <img className="holiday" src="https://www.apple.com/v/home/dz/images/heroes/holiday/holiday_hero_2a_small_2x.jpg"/>
+                        </div>
+                        <div className="watchbox">
+                            <div className="watch-info">
+                            </div>
+                            <div className="watch-wrap">
+                            </div>
                         </div>
                     </div>
                 </div>

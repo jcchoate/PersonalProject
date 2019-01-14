@@ -21,6 +21,15 @@
     border-color: #222;
     
 }
+.titles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.offer-wrapper{
+    display: flex;
+    flex-direction: column
+}
 h3{
     margin: auto;
     max-width: 13em;
@@ -73,9 +82,12 @@ h3{
     padding-top: 37px;
     margin-top: 10px;
     padding-left: 10%;
-    padding-right: 5%;
+    padding-right: 10%;
     overflow: hidden;
-    height: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .imageWrapper{
     margin: 0
@@ -94,17 +106,29 @@ h3{
 }
 .infowrap{
     width: 90%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 .xrpic{
+    height: 332px;
     width: 216px;
     background-repeat: no-repeat;
-    margin-top: 2em;
+    margin-top: 5em;
     right: auto;
-    background-image: url(/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_small.jpg);
+    background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_small_2x.jpg);
+    background-size: 216px 332px;
 }
-.xrwrap{
-    width: 100%;
+.xrpic2{
+    height: 332px;
+    width: 216px;
+    background-repeat: no-repeat;
+    margin-top: 5em;
+    right: auto;
+    background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xs/iphone_xs_0afef_small_2x.jpg);
+    background-size: 216px 332px;
 }
+
 .shipping-box{
     background: black;
     border-width: 0;
@@ -140,7 +164,62 @@ h3{
     height: 500px;
 }
 .holiday{
-    height: 100%;
     width: 100%;
     object-fit: contain
+}
+
+@media (min-width: 737px){
+    .titles{
+        font-size: 24px;
+        flex-direction: row
+    }
+    
+}
+@media (min-width: 900px){
+    .xrpic{
+        background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xr/iphone_xr_5e40f_medium_2x.jpg);
+        width: 890px;
+        height: 321px;
+        background-size: 890px 321px;
+        background-repeat: no-repeat;
+        left: calc(20% + 0px);
+    }
+    .xrpic2{
+        background-image: url(https://www.apple.com/v/home/dz/images/heroes/iphone-xs/iphone_xs_0afef_medium_2x.jpg);
+        width: 682px;
+        height: 315px;
+        background-size: 682px 315px;
+        background-repeat: no-repeat;
+        justify-items: center
+    }
+    .uphone-info{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 25px
+    }
+    .uphonepic{
+        height: 40px
+    }
+}
+@media (min-width: 1080px){
+    .xrpic{
+        width: 950px;
+        height: 381px;
+        background-size: 950px 381px;
+        
+    }
+    .xrpic2{
+        width: 974px;
+        height: 415px;
+        background-size: 974px 415px;
+        background-repeat: no-repeat;
+    }
+}
+@media (min-width: 1300px){
+    .xrpic{
+        width: 1000px;
+        height: 431px;
+        background-size: 1000px 431px;
+    }
 }

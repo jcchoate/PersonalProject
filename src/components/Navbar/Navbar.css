@@ -233,6 +233,12 @@ a{
 .menu-full{
     display: none;
 }
+.icon-full{
+    display: none
+}
+.bagnew{
+    margin-top: 14px
+}
 
 
 
@@ -257,7 +263,7 @@ a{
         -ms-user-select: none;
         user-select: none;
     }
-
+    
     .menu-full li{
         font-size: 14px;
         line-height: 3.14286;
@@ -288,11 +294,16 @@ a{
         margin: 0;
         color: #fff;
         margin-top: 3px;
-
-
+        
+        
     }
     .pineapple{
         margin-left: 15px
     }
-
+    
+    .bagnew{
+        display: none;
+    }
+    
+    
 }

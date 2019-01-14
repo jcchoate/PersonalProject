@@ -91,14 +91,15 @@ class Navbar extends Component {
                         <Link to='/support'>
                         <li>Support</li>
                         </Link>
-                        <ion-icon className="icon" name="search"></ion-icon>
-                        <img onClick={this.switch3} className={this.state.changer ? "bag bag-activated" : "bag"} src={shopping} alt="shopping bag" />
+                        <ion-icon className="icon icon-full" name="search"></ion-icon>
+                    <img onClick={this.switch3} className={this.state.changer ? "bag bag-activated" : "bag"} src={shopping} alt="shopping bag" />
                     </ul>
+                    <img onClick={this.switch3} className={this.state.changer ? "bag bag-activated" : "bag bagnew"} src={shopping} alt="shopping bag" />
                     </div>
                     <div className={this.state.changer2 ? "dropmenu dropmenu-active" : "dropmenu"}>
                         {cards}
                         <Link to='/bag'>
-                            <button className="cartcheck">Check Out</button>
+                            <button onClick={this.switch3} className="cartcheck">Check Out</button>
                         </Link>
                         <div className="slidelinks">
                         <Link to='/bag'>

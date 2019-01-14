@@ -9,7 +9,7 @@ import Mac from './components/Mac/Mac';
 import Upad from './components/Upad/Upad';
 import Uphone from './components/Uphone/Uphone';
 import Watch from './components/Watch/Watch';
-import PacbookPro from './components/PacbookPro'
+import PacbookPro from './components/Pacbook/PacbookPro'
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 

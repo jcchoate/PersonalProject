@@ -16,27 +16,6 @@ class Items extends Component {
 
     }
 
-    editItemFn(id, price) {
-        let editedItem = {
-            newPrice: price
-        }
-        axios.put(`/items/${id}`, editedItem).then(response => {
-            console.log(response)
-            this.setState({
-                items: response.data,
-            })
-
-        })
-    }
-
-    deleteItem(id) {
-        axios.delete(`/items/${id}`).then(response => {
-            this.setState({
-                items: response.data
-            })
-        })
-    }
-
     componentDidMount() {
         axios.get('/items').then((res) => {
 
@@ -50,19 +29,42 @@ class Items extends Component {
         }
         )
     }
+    editItemFn(id, name) {
+        let editedItem = {
+            name: this.state.name
+        }
+        console.log("editeditem", editedItem)
+        axios.put(`/items/${id}`, editedItem).then(response => {
+            console.log(response)
+            this.setState({
+                items: response.data,
+                changer: true
+            })
+
+        })
+    }
+
+    deleteItem(id) {
+        axios.delete(`/items/${id}`).then(response => {
+            this.setState({
+                items: response.data
+            })
+        })
+    }
+
     render() {
         console.log(this.state)
         let cards = "Your bag is empty"
         if (this.state.items[0]) {
 
             cards = this.state.items.map((item) => {
-                console.log(item)
                 return (<Card
                     deleteItem={this.deleteItem}
                     editItemFn={this.editItemFn}
                     image={item.imageAddress}
                     name={item.name}
                     price={item.price}
+                    id={item.id}
 
                 />)
             })
