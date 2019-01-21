@@ -25,7 +25,6 @@ app.post('/auth/signup', async (req, res) => {
     let { username, password } = req.body
     let db = req.app.get('db')
     let userFound = await db.user_check([username])
-    console.log(userFound)
     if (userFound[0]) {
         return session.status(200).send('Email already exists')
     }
@@ -45,7 +44,6 @@ app.post('/auth/login', async (req,res)=> {
     }
     let result = bcrypt.compareSync(password, userFound[0].hash)
     if (result){
-        console.log('Logged in')
         req.session.user = {id:userFound[0].id, username: userFound[0].username}
         res.status(200).send(req.session.user)
     }else {
@@ -72,7 +70,8 @@ app.listen(SERVER_PORT, () => {
 
 app.get('/items', controller.getItems)
 app.get('/items/:id', controller.getOneItem)
-// app.get('/orders', controller.getOrders)
+app.get('/orders', controller.getOrders)
+app.post('/orders', controller.addOrder)
 app.post('/items', controller.create)
 app.put('/items/add/:id', controller.add)
 app.put('/items/sub/:id', controller.sub)

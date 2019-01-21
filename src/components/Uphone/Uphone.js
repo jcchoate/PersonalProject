@@ -18,6 +18,7 @@ class Uphone extends Component {
                     name: 'uPhone',
                     price: '1449.00',
                     imageAddress: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/xs/iphone-xs-max-gold-select-2018?wid=800&hei=800&fmt=jpeg&qlt=80&op_usm=0.5,1.5&fit=constrain&.v=1541713822178',
+                    id: 3
                 })
             .then((res) => {
                 this.setState({ items: res.data })

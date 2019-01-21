@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import Card from './../Cart/Card'
+import Price from './../Price'
+import './Orders.css'
 
 export default class Orders extends Component {
     constructor(){
         super()
 
         this.state={
-            items=[]
+            items:[]
         }
     }
     componentDidMount() {
         axios.get('/orders').then((res) => {
-
-            console.log(res.data)
             this.setState({
                 items: res.data,
             })
@@ -21,13 +23,13 @@ export default class Orders extends Component {
   render() {
     let cards = "Your bag is empty"
     if (this.state.items[0]) {
-
         cards = this.state.items.map((item) => {
             return (<Card
-                image={item.imageAddress}
-                name={item.name}
+                image={item.image_url}
+                name={item.product_name}
                 price={item.price}
                 id={item.id}
+                quantity={item.product_quantity}
 
             />)
         })
@@ -47,7 +49,6 @@ export default class Orders extends Component {
         </div>
         <Price items={this.state.items} />
         <div className="buttoncont">
-            {this.state.items[0] ? <button className="checkout">Check Out</button> : null}
         </div>
 
     </div>

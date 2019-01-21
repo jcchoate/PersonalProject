@@ -117,8 +117,9 @@ class Navbar extends Component {
                             <br/>
                             <div className="linkbox">
                                 <img src="" />
-
+                                <Link onClick={this.switch3} to="/orders">
                                 <p className="cartchecklink">Orders</p>
+                                </Link>
                             </div>
                             <br/>
                             <div className="linkbox">

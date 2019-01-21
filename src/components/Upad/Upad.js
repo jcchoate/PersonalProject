@@ -19,6 +19,7 @@ class Upad extends Component {
                     name: 'uPad',
                     price: '559.00',
                     imageAddress: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/i/pa/ipad/cell/ipad-cell-select-gold-201803_GEO_US?wid=800&hei=800&fmt=jpeg&qlt=80&op_usm=0.5,1.5&fit=constrain&.v=1538432988206',
+                    id: 2
                 })
             .then((res) => {
                 this.setState({ items: res.data })

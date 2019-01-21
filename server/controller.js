@@ -1,38 +1,66 @@
 let items = []
-let uniqueId = 1
 
 
 module.exports = {
     getItems: (req, res) => {
         res.status(200).send(req.session.cart || [])
-        console.log('session', req.session)
     },
     getOneItem: (req, res) => {
-        
+
         res.status(200).send(oneItem)
     },
+    addOrder: async (req, res) => {
+        if (req.session.cart) {
+            let db = req.app.get('db')
+            let newOrder = req.body.map((item) => {
+                let formatted = {
+                    product_id: item.id,
+                    user_id: req.session.user.id,
+                    price: item.price,
+                    product_quantity: item.quantity
+                    
+                }
+                return formatted
+                
+            }
+            )
+            let inserted = await db.orders.insert(newOrder, function(err){
+                
+            })
+            res.status(200).send(inserted)
+            // let myOrder = await db.create_order([id, req.session.id, price, product_quantity])
+        }
+    },
+    getOrders: async (req, res) => {
+        let db = req.app.get('db')
+        let orders = await db.order_list(req.session.user.id)
+        if (req.session.user) {
+            res.status(200).send(orders)
+        } else {
+            res.status(401).send('Please log in')
+        }
+    },
     create: (req, res) => {
-        if(!req.session.cart){
-            req.session.cart=[]
+        if (!req.session.cart) {
+            req.session.cart = []
         }
         const {
             name,
             price,
-            imageAddress
+            imageAddress,
+            id
         } = req.body
         let newItem = {
             name: name,
             imageAddress: imageAddress,
             price: price,
-            id: uniqueId,
+            id: id,
             quantity: 1
         }
-        uniqueId++
         req.session.cart.push(newItem)
         res.status(200).send(req.session.cart)
-        console.log('Completed')
     },
-    add: (req,res)=>{
+    add: (req, res) => {
         const {
             cart
         } = req.session
@@ -40,11 +68,10 @@ module.exports = {
             id
         } = req.params
         const itemId = cart.findIndex((item) => id == item.id)
-        cart[itemId].quantity +=1
-        console.log("Quntity",cart[itemId].quantity)
+        cart[itemId].quantity += 1
         res.status(200).send(cart)
     },
-    sub: (req,res)=>{
+    sub: (req, res) => {
         const {
             cart
         } = req.session
@@ -52,13 +79,11 @@ module.exports = {
             id
         } = req.params
         const itemId = cart.findIndex((item) => id == item.id)
-        cart[itemId].quantity -=1
-        console.log("Quntity",cart[itemId].quantity)
+        cart[itemId].quantity -= 1
         res.status(200).send(cart)
     },
-    
+
     edit: (req, res) => {
-        // console.log(req.body)
         const {
             name
         } = req.body
@@ -69,17 +94,13 @@ module.exports = {
             cart
         } = req.session
         const itemId = cart.findIndex((item) => id == item.id)
-        // console.log("ITEM ID",itemId)
-        cart[itemId].name= name
-        console.log("REQ.BODY", req.body)
-        // console.log("CART 2",cart)
+        cart[itemId].name = name
         res.status(200).send(req.session.cart)
     },
     delete: (req, res) => {
         const {
             id
         } = req.params
-        console.log(req.params)
         const itemId = req.session.cart.findIndex((item) => id == item.id)
 
         req.session.cart.splice(itemId, 1)

@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Card from './Card'
 import Price from './../Price'
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
+
+
+
 class Items extends Component {
     constructor() {
         super()
@@ -10,17 +14,18 @@ class Items extends Component {
             name: '',
             price: '',
             imageAddress: '',
+            orders: []
         }
         this.deleteItem = this.deleteItem.bind(this)
         this.add = this.add.bind(this)
         this.sub = this.sub.bind(this)
+        this.sendOrder = this.sendOrder.bind(this)
 
     }
 
     componentDidMount() {
         axios.get('/items').then((res) => {
 
-            console.log(res.data)
             this.setState({
                 items: res.data,
             })
@@ -45,9 +50,7 @@ class Items extends Component {
         let editedItem = {
             name: this.state.name
         }
-        console.log("editeditem", editedItem)
         axios.put(`/items/${id}`, editedItem).then(response => {
-            console.log(response)
             this.setState({
                 items: response.data,
                 changer: true
@@ -63,9 +66,14 @@ class Items extends Component {
             })
         })
     }
+    
+    sendOrder(){
+        let orders = this.state.items
+        axios.post('/orders', orders).then(response => {
+        })
+    }
 
     render() {
-        console.log(this.state)
         let cards = "Your bag is empty"
         if (this.state.items[0]) {
 
@@ -101,7 +109,11 @@ class Items extends Component {
                 </div>
                 <Price items={this.state.items} />
                 <div className="buttoncont">
-                    {this.state.items[0] ? <button className="checkout">Check Out</button> : null}
+                    {this.state.items[0] ? 
+                    <Link to="/orders">
+                    <button onClick={this.sendOrder} className="checkout">Check Out</button> 
+                    </Link>
+                    : null}
                 </div>
 
             </div>

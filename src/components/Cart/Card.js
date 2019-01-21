@@ -28,9 +28,7 @@ class Card extends Component {
     render() {
 
         let { image, name, price, deleteItem, id } = this.props
-        // console.log(this.state.changer)
         let edited = null
-        console.log(this.props)
         return (
 
 

@@ -12,6 +12,7 @@ import Watch from './components/Watch/Watch';
 import PacbookPro from './components/Pacbook/PacbookPro'
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import Orders from './components/Orders/Orders';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path='/Watch' component={Watch}/>
             <Route path='/sign-in' component={Signin}/>
             <Route path='/register' component={Register}/>
+            <Route path='/orders' component={Orders}/>
           </Switch>
         </HashRouter>
         {/* <header className="App-header">
