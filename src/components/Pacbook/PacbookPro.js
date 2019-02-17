@@ -44,7 +44,7 @@ class PacbookPro extends Component {
                     <h2>More Power.</h2>
                     <h2>More Performance.</h2>
                     <h2>More Pro.</h2>
-                    <div classname="pacbook-wrapper">
+                    <div className="pacbook-wrapper">
                         <div className="pacbook-image"></div>
                     </div>
                 </div>

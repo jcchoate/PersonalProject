@@ -57,6 +57,7 @@ module.exports = {
             id: id,
             quantity: 1
         }
+        
         req.session.cart.push(newItem)
         res.status(200).send(req.session.cart)
     },

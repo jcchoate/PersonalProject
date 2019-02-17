@@ -34,18 +34,28 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        axios.get('/items').then((res) => this.setState({ items: res.data }))
+        axios.get('/items').then((res) => 
+        this.setState({ items: res.data }))
     }
-
+    componentDidUpdate(prevProps, prevState){
+        
+            axios.get('/items').then((res)=>{
+                this.setState({items: res.data})
+            })
+        
+    }
     render() {
         let cards = "Your bag is empty"
         if (this.state.items[0]) {
-
+            let key = 200
             cards = this.state.items.map((item) => {
-                return (<Card
-                    image={item.imageAddress}
-                    name={item.name}
-                />)
+                return (
+                    <div key={key ++} className="oneItem">
+                        <img className="smallpic" src={item.imageAddress} alt="product image"/>
+                        <h4>{item.name}</h4>
+                        <p>Qty:{item.quantity}</p>
+                    </div>
+                )
             })
         }
         return (
@@ -97,7 +107,11 @@ class Navbar extends Component {
                     <img onClick={this.switch3} className={this.state.changer ? "bag bag-activated" : "bag bagnew"} src={shopping} alt="shopping bag" />
                     </div>
                     <div className={this.state.changer2 ? "dropmenu dropmenu-active" : "dropmenu"}>
+                    <p>What's in your bag</p>
+                    <div className="smallitembox">
                         {cards}
+
+                    </div>
                         <Link to='/bag'>
                             <button onClick={this.switch3} className="cartcheck">Check Out</button>
                         </Link>

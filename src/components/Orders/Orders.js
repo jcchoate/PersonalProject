@@ -40,8 +40,7 @@ export default class Orders extends Component {
             <img alt="box" className="littleBox" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/image/AppleInc/aos/published/images/d/el/delivery/message/delivery-message-banner?wid=38&hei=42&fmt=png-alpha&qlt=80&.v=1515024377276" />
         </div>
         <div className="inthebag">
-            <h1 className="bagheader">Here's what's in your bag.</h1>
-            <p>Free delivery and free returns</p>
+            <h1 className="bagheader">Here's your recent orders.</h1>
         </div>
         <div className="itemCards">
             {cards}

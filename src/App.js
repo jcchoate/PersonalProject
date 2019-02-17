@@ -17,7 +17,7 @@ import Orders from './components/Orders/Orders';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div key={"waddakey"} className="App">
         <Navbar/>
         <HashRouter>
           <Switch>
@@ -32,10 +32,7 @@ class App extends Component {
             <Route path='/orders' component={Orders}/>
           </Switch>
         </HashRouter>
-        {/* <header className="App-header">
-          <img data-aos="fade-zoom-in" src={iphone} className="App-logo" alt="logo" />
-          
-        </header> */}
+
         
       </div>
     );

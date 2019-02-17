@@ -17,14 +17,14 @@ class Card extends Component {
             changer: false,
         }))
     }
-    editBtn(id){
+    editBtn(id) {
         this.props.editItemFn(id)
         this.setState({
             changer: true
         })
     }
 
-    
+
     render() {
 
         let { image, name, price, deleteItem, id } = this.props
@@ -37,14 +37,20 @@ class Card extends Component {
                     <img alt="cart item" className="picture" src={image} />
                 </div>
                 <div onClick={this.reset} className="cart-column">
-                    
-                        <h2 className="product-name">
-                            {name ? name : null}
-                        </h2> 
+
+                    <h2 className="product-name">
+                        {name ? name : null}
+                    </h2>
                     <label className="quantity">
                         <span aria-hidden="true">Qty: {this.props.quantity}</span>
-                        <button className="math" onClick={()=>this.props.add(id)}>+</button>
-                        <button className="math" onClick={()=>this.props.sub(id)}>-</button>
+                        {this.props.add ?
+                            <div>
+                                <button className="math" onClick={() => this.props.add(id)}>+</button>
+                                <button className="math" onClick={() => this.props.sub(id)}>-</button>
+                            </div>
+                            :
+                            null
+                        }
                     </label>
                     <div className="pricedetails">
                         <p className="price">{price ? price : null}</p>
